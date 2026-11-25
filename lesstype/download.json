@@ -1,0 +1,9 @@
+{
+  "version": "0.1.1",
+  "github": "https://github.com/utkarsh-naman/less-type",
+  "release": {
+    "link": "https://github.com/utkarsh-naman/less-type/releases/tag/Latest",
+    "edge": "https://microsoftedge.microsoft.com/addons/detail/lesstype/iecbdapbkhalemmokofmmdjgfghdgioc",
+    "download": "https://github.com/utkarsh-naman/less-type/releases/download/Latest/less-type.zip"
+  }
+}

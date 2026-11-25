@@ -1,0 +1,17 @@
+{
+  "version": "0.1.5",
+  "github": "https://github.com/utkarsh-naman/chex",
+  "site-url": "https://github.com/utkarsh-naman/chex",
+  "release": {
+    "github": {
+      "release": "https://github.com/utkarsh-naman/chex/releases",
+      "latest-release-highlight": "https://github.com/utkarsh-naman/chex/releases#release-Executable",
+      "latest-release": "https://github.com/utkarsh-naman/AppMan/releases/tag/v0.1.5"
+    },
+    "play-store": "sasas",
+    "download": {
+      "arm64-v8a": "https://github.com/utkarsh-naman/AppMan/releases/download/v0.1.5/AppMan-arm64-v8a-release.apk",
+      "armeabi-v7a": "https://github.com/utkarsh-naman/AppMan/releases/download/v0.1.5/AppMan-armeabi-v7a-release.apk"
+    }
+  }
+}
