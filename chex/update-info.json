@@ -1,5 +1,10 @@
 {
-  "files & size": {
-    "chex.exe": "10.9MB"
-  }
+    "version":  "0.1.0",
+    "url":  "https://github.com/utkarsh-naman/chex/releases/download/Executable/chex.zip",
+    "size":  7902947,
+    "sha256":  "20632a2f3b8b2df3b536da6f37ce32d68b82425f8eb299ed1128d1ee35ae96fd",
+    "files":  [
+                  "chex.exe",
+                  "updater.exe"
+              ]
 }
