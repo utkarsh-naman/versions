@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>utnam / versions</title>
+<meta name="description" content="Latest release versions for projects by utnam. Version metadata only.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <div class="top">
+    <span class="brand"><b>utnam</b> / versions</span>
+    <a href="https://github.com/utkarsh-naman/versions">github</a>
+  </div>
+
+  <h1>Latest versions of utnam&rsquo;s projects.</h1>
+  <p class="lede">
+    This site carries version information only. Downloads, documentation and
+    support live with each project &mdash; the JSON files below are what apps
+    read when checking for updates.
+  </p>
+
+  <ul class="projects">
+    <li class="project">
+      <span class="line">
+        <span class="name">AppMan</span>
+        <span class="version" data-version="appman" data-state="pending">&mdash;</span>
+      </span>
+      <span class="endpoint">/appman/latest.json</span>
+    </li>
+    <li class="project">
+      <span class="line">
+        <span class="name">chex</span>
+        <span class="version" data-version="chex" data-state="pending">&mdash;</span>
+      </span>
+      <span class="endpoint">/chex/latest.json</span>
+    </li>
+    <li class="project">
+      <span class="line">
+        <span class="name">less-type</span>
+        <span class="version" data-version="lesstype" data-state="pending">&mdash;</span>
+      </span>
+      <span class="endpoint">/lesstype/latest.json</span>
+    </li>
+    <li class="project">
+      <span class="line">
+        <span class="name">svgeater</span>
+        <span class="version" data-version="svgeater" data-state="pending">&mdash;</span>
+      </span>
+      <span class="endpoint">/svgeater/latest.json</span>
+    </li>
+  </ul>
+</main>
+
+<footer>
+  <p>Versions checked in your browser <span id="checked">&mdash;</span></p>
+  <p>Static files, no tracking.</p>
+</footer>
+
+<script>
+  const projects = ["appman", "chex", "lesstype", "svgeater"];
+
+  Promise.all(projects.map(async (name) => {
+    const el = document.querySelector(`[data-version="${name}"]`);
+    try {
+      const res = await fetch(`${name}/latest.json`, { cache: "no-cache" });
+      if (!res.ok) throw new Error(res.status);
+      const { version } = await res.json();
+      el.textContent = version ? `v${version}` : "not set";
+      el.dataset.state = version ? "ok" : "missing";
+    } catch {
+      el.textContent = "unavailable";
+      el.dataset.state = "missing";
+    }
+  })).then(() => {
+    const time = document.getElementById("checked");
+    time.textContent = `at ${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
+  });
+</script>
+
+</body>
+</html>
